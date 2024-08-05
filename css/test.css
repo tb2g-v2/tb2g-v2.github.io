@@ -1,0 +1,40 @@
+.container {
+    position: relative; /* Establish a positioning context */
+    width: 300px; /* Width of the container */
+    height: 200px; /* Height of the container */
+    margin: 50px auto; /* Center the container horizontally */
+    background-color: red;
+    z-index: 1;
+}
+
+/* Main box style */
+.main-box {
+    position: absolute; /* Allow positioning within the container */
+    top: 10px; /* Slightly offset from the top */
+    left: 10px; /* Slightly offset from the left */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    background-color: #3498db; /* Main box color */
+    z-index: 3; /* Ensure it's on top of the shadow box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    display: flex; /* Flexbox for content alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+/* Shadow box style */
+.shadow-box {
+    position: absolute; /* Allow positioning within the container */
+    top: 0; /* Align with the container top */
+    left: 0; /* Align with the container left */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    background-color: rgba(0, 0, 0, 0.2); /* Shadow color */
+    z-index: 2; /* Place behind the main box */
+    border-radius: 8px; /* Match main box corners */
+}
+
