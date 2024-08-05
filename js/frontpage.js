@@ -1,10 +1,10 @@
 // Create an array to store audio objects for each chord
 const chords = {
-    "button1": new Audio('../audio/chordi.mp3'),
-    "button2": new Audio('../audio/chordii.mp3'),
-    "button3": new Audio('../audio/chordiii.mp3'),
-    "button4": new Audio('../audio/chordiv.mp3'),
-    "button5": new Audio('../audio/chordv.mp3'),
+    "button1": new Audio('/audio/chordi.mp3'),
+    "button2": new Audio('/audio/chordii.mp3'),
+    "button3": new Audio('/audio/chordiii.mp3'),
+    "button4": new Audio('/audio/chordiv.mp3'),
+    "button5": new Audio('/audio/chordv.mp3'),
 };
 
 // Function to play audio when a button is hovered over
