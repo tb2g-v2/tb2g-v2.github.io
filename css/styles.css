@@ -1,104 +1,129 @@
-body{
-    background-color:#f6f0e6;
+body {
+    background-color: #f6f0e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Remove scroll functionality */
 }
 
-.container{
+.container {
     position: relative;
-   width: 300px;
-   height: 200px;
-   margin: 50px auto;
-   z-index: 1;
+    width: 60%;
+    height: 70%;
+    z-index: 1;
+    font-size: 2px;
+}
+#subtitle{
+    color: rgba(0, 0, 0, 0.557);
+    font-size: clamp(0.5rem, 1.5vw, 1rem); 
+    font-weight: normal;
+    margin-top: 0.5rem; 
+    text-align: center;
+    margin-top: 5px;
 }
 
-.buttoncontainer{
-    padding: 10px;
+.buttoncontainer {
+    margin-top: -3vh; /* Adjust using viewport units */
+    width: 60%;
 }
 
-.background{
+.background {
     position: absolute;
     margin-left: 7px;
     margin-top: 7px;
-    width: 300px;
-    height: 200px;
-    background-color: rgba(46, 90, 212, 0.993);/*shadow*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 90, 212, 0.993); /* Shadow */
     border: 0;
     z-index: 3;
 }
 
-.main{
-    position:absolute;
+.main {
+    position: absolute;
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color:#f7e2c8; /*main bk*/
+    background-color: #f7e2c8; /* Main background */
     z-index: 4;
-    border: 1px solid rgba(46, 90, 212, 0.993); /*mainbd*/
+    border: 1px solid rgba(46, 90, 212, 0.993); /* Main border */
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
-.left{
-    /*background-color: brown;*/
-    margin-left: 2%;
-    padding-top: 5%;
+h1 {
+    font-size: clamp(2rem, 6vw, 5rem); /* Scale with viewport */
+    flex: 2;
+    white-space: nowrap;
 }
 
-.right{
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.right {
     height: 100%;
-    /*background-color: crimson;*/
     margin-right: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     width: 35%;
 }
 
-.button{  /*deals with all buttons*/
-    border: .8px solid black;
+.button {
+    border: 0.5vh solid black; /* Use relative units */
     cursor: pointer;
     margin: 0 auto;
     font-family: sans-serif;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: clamp(1rem, 2vw, 2rem); /* Scale button text */
 }
 
-.button:hover{
+.button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-.button.l{ /*left buttons*/
+.button.l {
     display: block; /* Ensure button is treated as a block-level element */
-}
-
-.button.r{ /*right buttons*/
+    height: clamp(3rem, 5vw, 5rem); /* Scale with viewport */
     width: 100%;
-    
 }
 
-.button.l:hover{
+.button.r {
+    width: 100%;
+    height: clamp(2rem, 4vw, 4rem); /* Scale with viewport */
+}
+
+.button.l:hover {
     background-color: #9B5DE5;
-    animation: rotateC 0.5s forwards;
+    animation: rotateA 0.5s forwards;
 }
 
-.button.r.a:hover{
+.button.r.a:hover {
     background-color: #F15BB5;
     animation: rotateCC 0.5s forwards;
 }
 
-.button.r.b:hover{
+.button.r.b:hover {
     background-color: #FEE440;
     animation: rotateC 0.5s forwards;
 }
 
-.button.r.c:hover{
+.button.r.c:hover {
     background-color: #00BBF9;
     animation: rotateCC 0.5s forwards;
 }
 
-.button.r.d:hover{
+.button.r.d:hover {
     background-color: #ff595e;
     animation: rotateC 0.5s forwards;
 }
@@ -118,5 +143,14 @@ body{
     }
     to {
         transform: scale(1.1) rotate(0.5deg); /* Final state */
+    }
+}
+
+@keyframes rotateA {
+    from {
+        transform: scale(1) rotate(0deg); /* Initial state */
+    }
+    to {
+        transform: scale(1.1) rotate(0deg); /* Final state */
     }
 }
