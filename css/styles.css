@@ -14,7 +14,6 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Remove scroll functionality */
     font-family: 'Merriweather', serif; /* Ensure font is applied globally */
 }
 
@@ -62,12 +61,12 @@ body {
     width: 100%;
     height: 100%;
     background-color: #f7e2c8; /* Main background */
-    border: 1px solid rgba(46, 90, 212, 0.993); /* Main border */
+    border: 1px solid rgb(46, 90, 212); /* Main border */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    box-shadow: 10px 10px 20px rgba(46, 90, 212, 0.5); /* Shadow with offset and blue color */
+    box-shadow: 10px 10px 0px rgb(46, 90, 212); /* Shadow with offset and blue color */
 }
 
 /* Heading Style */
@@ -83,7 +82,7 @@ h1 {
 /* Flexbox Containers */
 .left, .right {
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    overflow: hidden; /* Prevent content overflow */
+    /*overflow: hidden;  Prevent content overflow */
 }
 
 .left {
@@ -212,28 +211,5 @@ h1 {
 
     .button.r {
         height: clamp(1.5rem, 3vw, 3rem);
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: clamp(1.5rem, 5vw, 4rem);
-    }
-
-    #subtitle {
-        font-size: clamp(0.5rem, 1vw, 0.75rem);
-    }
-
-    .container {
-        width: 95%;
-        height: 85%;
-    }
-
-    .button.l {
-        height: clamp(2rem, 3vw, 3.5rem);
-    }
-
-    .button.r {
-        height: clamp(1rem, 2.5vw, 2.5rem);
     }
 }
