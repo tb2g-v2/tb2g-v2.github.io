@@ -1,3 +1,4 @@
+/* Basic Reset and Global Styles */
 body {
     background-color: #f6f0e6;
     display: flex;
@@ -11,31 +12,33 @@ body {
 
 .container {
     position: relative;
-    width: 60%;
+    width: 90%;
+    max-width: 1200px; /* Max width for larger screens */
     height: 70%;
     z-index: 1;
-    font-size: 2px;
-}
-#subtitle{
-    color: rgba(0, 0, 0, 0.557);
-    font-size: clamp(0.5rem, 1.5vw, 1rem); 
-    font-weight: normal;
-    margin-top: 0.5rem; 
-    text-align: center;
-    margin-top: 5px;
+    font-size: 2px; /* Base font size */
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
 }
 
-.buttoncontainer {
-    margin-top: -3vh; /* Adjust using viewport units */
-    width: 60%;
+#subtitle {
+    color: rgba(0, 0, 0, 0.557);
+    font-size: clamp(0.75rem, 1.5vw, 1rem); /* Responsive font size */
+    font-weight: normal;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+#icantcode{ /*space between sub and learn more */
+    height: .6rem;
+    background-color: #ffffff00;
+    border: 0;
 }
 
 .background {
     position: absolute;
-    margin-left: 7px;
-    margin-top: 7px;
-    width: 100%;
-    height: 100%;
+    margin: 7px;
+    width: calc(100% - 14px); /* Account for margin */
+    height: calc(100% - 14px); /* Account for margin */
     background-color: rgba(46, 90, 212, 0.993); /* Shadow */
     border: 0;
     z-index: 3;
@@ -43,21 +46,26 @@ body {
 
 .main {
     position: absolute;
-    z-index: 1;
+    z-index: 4;
     width: 100%;
     height: 100%;
     background-color: #f7e2c8; /* Main background */
-    z-index: 4;
-    border: 1px solid rgba(46, 90, 212, 0.993); /* Main border */
+    border: 2px solid rgba(46, 121, 212); /* Main border */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
+    box-shadow: 20px 20px 0px rgb(46, 121, 212); /* Shadow with offset and blue color */
 }
 
+
 h1 {
-    font-size: clamp(2rem, 6vw, 5rem); /* Scale with viewport */
+    font-size: clamp(2rem, 5vw, 5rem); /* Responsive font size */
     flex: 2;
     white-space: nowrap;
+    text-align: center;
+    margin: 0;
+    font-family: 'Merriweather', serif;
 }
 
 .left {
@@ -76,33 +84,39 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     width: 35%;
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
+    overflow: visible;
 }
 
+/* Button Styles */
 .button {
-    border: 0.5vh solid black; /* Use relative units */
+    border: 0.5vh solid black; /* Border size */
     cursor: pointer;
     margin: 0 auto;
     font-family: sans-serif;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: clamp(1rem, 2vw, 2rem); /* Scale button text */
-}
-
-.button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: clamp(1rem, 2vw, 2rem); /* Scaled font size */
+    display: flex; /* Use flexbox for centering text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    overflow: visible; /* Allow overflow for animations */
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
+    text-align: center; /* Center text inside the button */
+    position: relative; /* Needed for transformations */
+    padding: 0.5rem; /* Remove default padding */
 }
 
 .button.l {
-    display: block; /* Ensure button is treated as a block-level element */
-    height: clamp(3rem, 5vw, 5rem); /* Scale with viewport */
+    height: clamp(3rem, 3.5vw, 4rem); /* Scaled height */
     width: 100%;
 }
 
 .button.r {
     width: 100%;
-    height: clamp(2rem, 4vw, 4rem); /* Scale with viewport */
+    height: clamp(2rem, 4vw, 4rem); /* Scaled height */
 }
 
+/* Button Hover Effects */
 .button.l:hover {
     background-color: #9B5DE5;
     animation: rotateA 0.5s forwards;
@@ -128,9 +142,11 @@ h1 {
     animation: rotateC 0.5s forwards;
 }
 
+/* Keyframe Animations */
 @keyframes rotateCC {
     from {
         transform: scale(1) rotate(0deg); /* Initial state */
+        transform-origin: center; /* Adjust transformation origin */
     }
     to {
         transform: scale(1.1) rotate(-0.5deg); /* Final state */
@@ -140,6 +156,7 @@ h1 {
 @keyframes rotateC {
     from {
         transform: scale(1) rotate(0deg); /* Initial state */
+        transform-origin: center; /* Adjust transformation origin */
     }
     to {
         transform: scale(1.1) rotate(0.5deg); /* Final state */
@@ -149,8 +166,57 @@ h1 {
 @keyframes rotateA {
     from {
         transform: scale(1) rotate(0deg); /* Initial state */
+        transform-origin: center; /* Adjust transformation origin */
     }
     to {
         transform: scale(1.1) rotate(0deg); /* Final state */
+    }
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 80%;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .button.l {
+        height: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .button.r {
+        height: clamp(1.5rem, 3vw, 3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    #subtitle {
+        font-size: clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .container {
+        width: 95%;
+        height: 85%;
+    }
+
+    .button.l {
+        height: clamp(2rem, 3vw, 3.5rem);
+    }
+
+    .button.r {
+        height: clamp(1rem, 2.5vw, 2.5rem);
     }
 }
