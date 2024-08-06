@@ -1,3 +1,10 @@
+/* Basic Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Basic Reset and Global Styles */
 body {
     background-color: #f6f0e6;
@@ -8,6 +15,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden; /* Remove scroll functionality */
+    font-family: 'Merriweather', serif; /* Ensure font is applied globally */
 }
 
 .container {
@@ -20,6 +28,7 @@ body {
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
 }
 
+/* Subtitle Style */
 #subtitle {
     color: rgba(0, 0, 0, 0.557);
     font-size: clamp(0.75rem, 1.5vw, 1rem); /* Responsive font size */
@@ -28,12 +37,14 @@ body {
     text-align: center;
 }
 
-#icantcode{ /*space between sub and learn more */
+/* Spacing Fix */
+#icantcode {
     height: .6rem;
     background-color: #ffffff00;
     border: 0;
 }
 
+/* Background Style */
 .background {
     position: absolute;
     margin: 7px;
@@ -44,28 +55,35 @@ body {
     z-index: 3;
 }
 
+/* Main Box Style */
 .main {
     position: absolute;
     z-index: 4;
     width: 100%;
     height: 100%;
     background-color: #f7e2c8; /* Main background */
-    border: 2px solid rgba(46, 121, 212); /* Main border */
+    border: 1px solid rgba(46, 90, 212, 0.993); /* Main border */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    box-shadow: 20px 20px 0px rgb(46, 121, 212); /* Shadow with offset and blue color */
+    box-shadow: 10px 10px 20px rgba(46, 90, 212, 0.5); /* Shadow with offset and blue color */
 }
 
-
+/* Heading Style */
 h1 {
     font-size: clamp(2rem, 5vw, 5rem); /* Responsive font size */
     flex: 2;
     white-space: nowrap;
     text-align: center;
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', serif; /* Ensure font is applied */
+}
+
+/* Flexbox Containers */
+.left, .right {
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .left {
@@ -84,8 +102,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     width: 35%;
-    box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    overflow: visible;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 /* Button Styles */
@@ -99,7 +116,7 @@ h1 {
     display: flex; /* Use flexbox for centering text */
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
-    overflow: visible; /* Allow overflow for animations */
+    overflow: hidden; /* Prevent content overflow */
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
     text-align: center; /* Center text inside the button */
     position: relative; /* Needed for transformations */
@@ -174,25 +191,10 @@ h1 {
 }
 
 /* Responsive Design Adjustments */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 768px) {
     .container {
-        width: 85%;
-        height: 75%;
-    }
-
-    .main {
-        flex-direction: row;
-    }
-
-    .left, .right {
-        width: 50%;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 95%;
-        height: 85%;
+        width: 90%;
+        height: 80%;
     }
 
     .main {
@@ -201,5 +203,37 @@ h1 {
 
     .left, .right {
         width: 100%;
+        margin: 0;
+    }
+
+    .button.l {
+        height: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .button.r {
+        height: clamp(1.5rem, 3vw, 3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    #subtitle {
+        font-size: clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .container {
+        width: 95%;
+        height: 85%;
+    }
+
+    .button.l {
+        height: clamp(2rem, 3vw, 3.5rem);
+    }
+
+    .button.r {
+        height: clamp(1rem, 2.5vw, 2.5rem);
     }
 }
