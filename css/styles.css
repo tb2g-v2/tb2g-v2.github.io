@@ -7,7 +7,7 @@
 
 /* Basic Reset and Global Styles */
 body {
-    background-color: #f6f0e6;
+    background-color: #e7c69d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,7 @@ body {
     z-index: 4;
     width: 100%;
     height: 100%;
-    background-color: #f7e2c8; /* Main background */
+    background-color: #fff0e9; /* Main background */
     border: 1px solid rgb(46, 90, 212); /* Main border */
     display: flex;
     justify-content: space-between;
@@ -121,6 +121,15 @@ h1 {
     text-align: center; /* Center text inside the button */
     position: relative; /* Needed for transformations */
     padding: 0.5rem; /* Remove default padding */
+}
+
+.buttoncontainer a { /* removes underline from button */
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.right a{/* removes underline from button */
+
 }
 
 .button.l {
