@@ -38,21 +38,23 @@ body {
 
 /* Spacing Fix */
 #icantcode {
-    height: .6rem;
+    height: 1rem;
     background-color: #ffffff00;
     border: 0;
 }
 
-/* Background Style */
+/* Background Style - HEY so this isnt used since using a "box shadow" under .main FYI
 .background {
     position: absolute;
     margin: 7px;
-    width: calc(100% - 14px); /* Account for margin */
-    height: calc(100% - 14px); /* Account for margin */
-    background-color: rgba(46, 90, 212, 0.993); /* Shadow */
+    width: calc(100% - 14px); /* Account for margin 
+    height: calc(100% - 14px); /* Account for margin 
+    background-color: rgba(46, 90, 212, 0.993); /* Shadow 
     border: 0;
     z-index: 3;
-}
+} 
+*/
+
 
 /* Main Box Style */
 .main {
@@ -66,7 +68,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    box-shadow: 10px 10px 0px rgb(46, 90, 212); /* Shadow with offset and blue color */
+    box-shadow: 20px 20px 0px rgb(46, 90, 212); /* Shadow with offset and blue color */
 }
 
 /* Heading Style */
@@ -82,7 +84,6 @@ h1 {
 /* Flexbox Containers */
 .left, .right {
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
-    /*overflow: hidden;  Prevent content overflow */
 }
 
 .left {
@@ -101,7 +102,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     width: 35%;
-    overflow: hidden; /* Prevent content overflow */
+    
 }
 
 /* Button Styles */
@@ -109,13 +110,13 @@ h1 {
     border: 0.5vh solid black; /* Border size */
     cursor: pointer;
     margin: 0 auto;
-    font-family: sans-serif;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 500;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     font-size: clamp(1rem, 2vw, 2rem); /* Scaled font size */
     display: flex; /* Use flexbox for centering text */
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
-    overflow: hidden; /* Prevent content overflow */
     box-sizing: border-box; /* Include padding and border in element’s total width and height */
     text-align: center; /* Center text inside the button */
     position: relative; /* Needed for transformations */
@@ -129,7 +130,7 @@ h1 {
 
 .button.r {
     width: 100%;
-    height: clamp(2rem, 4vw, 4rem); /* Scaled height */
+    height: clamp(3rem, 4vw, 4rem); /* Scaled height */
 }
 
 /* Button Hover Effects */
@@ -165,7 +166,7 @@ h1 {
         transform-origin: center; /* Adjust transformation origin */
     }
     to {
-        transform: scale(1.1) rotate(-0.5deg); /* Final state */
+        transform: scale(1.1) rotate(-1deg); /* Final state */
     }
 }
 
@@ -175,7 +176,7 @@ h1 {
         transform-origin: center; /* Adjust transformation origin */
     }
     to {
-        transform: scale(1.1) rotate(0.5deg); /* Final state */
+        transform: scale(1.1) rotate(1deg); /* Final state */
     }
 }
 
@@ -198,6 +199,8 @@ h1 {
 
     .main {
         flex-direction: column;
+        box-shadow: 5px 5px 0px rgb(46, 90, 212);
+        border: 2px solid rgb(46, 90, 212);
     }
 
     .left, .right {
@@ -210,6 +213,16 @@ h1 {
     }
 
     .button.r {
-        height: clamp(1.5rem, 3vw, 3rem);
+        height: clamp(5rem, 5vw, 5rem);
+        width: 90%;
+        font-size: 2rem;
+        margin-left: 10%;
+        margin-right: 10%;
     }
+
+    #subtitle {
+        display:none;
+    }
+    
+    h1{margin-top: 10px;}
 }
