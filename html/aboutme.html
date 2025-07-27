@@ -5,39 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me</title>
   <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     .aboutme {
       text-align: center;
       padding: 2rem;
+      background-color: #fff0e9;
+      margin: 3rem auto;
+      border: 4px solid #2e5ad4;
+      box-shadow: 15px 15px 0px #2e5ad4;
+      max-width: 700px;
+      font-family: 'Merriweather', serif;
+      border-radius: 12px;
+      animation: fadeSlideIn 0.8s ease;
     }
+
+    .aboutme h1 {
+      font-size: 2.5rem;
+      color: #2e5ad4;
+      margin-bottom: 1rem;
+    }
+
     .aboutme img {
-      width: 300px;
+      width: clamp(200px, 40%, 300px);
       height: auto;
-      border: 3px solid #2e5ad4;
-      box-shadow: 10px 10px 0 #2e5ad4;
+      border: 5px solid #9B5DE5;
+      box-shadow: 10px 10px 0px #F15BB5;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
     }
+
+    .aboutme img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
     .aboutme p {
-      margin-top: 1rem;
       font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .buttoncontainer {
+      margin-top: 2rem;
+    }
+
+    .buttoncontainer a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #buttonProjects .button {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #buttonProjects .button:hover {
+      transform: scale(1.1) rotate(1deg);
+      background-color: #00BBF9;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
   <div class="aboutme">
+    <div class="back-button">
+  <a href="/index.html">&lt; MAIN / ABOUTME.txt</a>
+</div>
     <h1>About Me</h1>
     <img id="randomImage" src="" alt="Random pic of Drew">
-    <p>Hi, I'm Andrew Avendano, a student in aerospace engineering who loves making things. I do robotics, Baja SAE, and build CNCs and electric bikes for fun.</p>
-  </div>
+  <!-- Larger intro -->
+    <p class="intro-line">
+  Hi, I'm Andrew Avendano, but I usually go by Drew.
+</p>
+
+    <!-- Main paragraph -->
+    <p>
+      I'm a student in Aerospace Engineering and I love making my own silly little projects. Whether it's building robots, small voltage electronics, or just plain CAD, I'm all for it. I believe inventing and creativity should be as accessible as possible, so I'm a big advocate for using the internet as a space where people are encouraged to learn and experiment.
+      <br><br>
+      When I'm not breaking something, you'll probably find me running or nerding out about coffee... I swear, I can quit caffine whenever I want though, joking...ish
+      <br><br>
+      Most of what I build is self-taught, and I try to share what I learn so others can build cool stuff too. I believe if something doesn't exist, you should try to make it yourself, even if it's janky the first time around!
+      <br><br>
+      Give the webpage a refresh to see some silly photos!
+    </p>
+
+
+    <!-- Button at bottom -->
+    <div class="buttoncontainer">
+  <a href="/html/projects.html" id="buttonProjects">
+    <button class="button l" style="width: 80%;">Show Me The Projects!</button>
+  </a>
+</div>
 
   <script>
+    // Random image picker
     const images = [
-      "/Images/me1.png",
-      "/Images/me2.png",
-      "/Images/me3.png",
-      "/Images/me4.png"
+      "/Images/AboutMe/me1.png",
+      "/Images/AboutMe/me3.png",
+      "/Images/AboutMe/me4.png",
+      "/Images/AboutMe/me5.png",
+      "/Images/AboutMe/me6.png",
+      "/Images/AboutMe/me7.png",
+      "/Images/AboutMe/me8.png",
+      "/Images/AboutMe/me10.png",
+      "/Images/AboutMe/me11.png",
+      "/Images/AboutMe/me12.png",
+      "/Images/AboutMe/me13.png",
     ];
     const randomIndex = Math.floor(Math.random() * images.length);
     document.getElementById("randomImage").src = images[randomIndex];
+
+    // Sound effect on hover
+    const projectSound = new Audio('/audio/chordv.mp3');
+    projectSound.volume = 0.1;
+
+    const projectButton = document.getElementById('buttonProjects');
+    projectButton.addEventListener('mouseenter', () => {
+      projectSound.currentTime = 0;
+      projectSound.play();
+    });
   </script>
 </body>
 </html>

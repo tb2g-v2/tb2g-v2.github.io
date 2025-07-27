@@ -1,38 +1,76 @@
-<!--welcome to the cespool known as my site, try to enjoy your stay :))))-->
+<!--welcome to the cesspool known as my site, try to enjoy your stay :))))-->
 <!--MAIN LANDING PAGE-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Avendano</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Avendano</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
-<body>
-    <div class="container"> <!--edit container to move placement of the box-->
-        <div class="background"></div><!--has the shadow of the main box-->
-        <main class="main"><!--this is the cool center box-->
-            <div class="left">
-                <h1>
-                    ANDREW <br> AVENDANO
-                    <div id="subtitle">click anywhere for sound effects</div>
-                </h1>
-                <hr id="icantcode">
-                <div class="buttoncontainer">
-                    <a href="/html/aboutme.html">  <button class="button l" id="button1"> ABOUT ME!</button>     </a>
-                </div>
-            </div>
-            <div class="right">
-                <button class="button r a" id="button2">Projects</button>
-                <button class="button r b" id="button3">Education</button>
-                <button class="button r c" id="button4">Experience</button>
-                <button class="button r d" id="button5">About This Site</button>
-                <script src="/js/frontpage.js"></script>
-            </div>
-        </main>
+<!-- Resume Popup -->
+<div id="resumePopup" class="popup hidden">
+  <div class="popup-box">
+    <p>NO WAY!!!!! You're trying to download my resume????</p>
+    <div class="popup-buttons">
+      <button id="resumeYes">YES YOU'RE SO AWESOME AND COOL</button>
+      <button id="resumeNo">NO????</button>
     </div>
+  </div>
+</div>
+<body>
+
+  <!-- Flex wrapper for homepage only -->
+  <div class="home-wrapper">
+    <div class="container">
+      <div class="background"></div>
+      <main class="main">
+        <div class="left">
+          <h1>
+            ANDREW <br> AVENDANO
+            <div id="subtitle">click anywhere for sound effects</div>
+          </h1>
+          <hr id="icantcode">
+          <div class="buttoncontainer">
+            <a href="/html/aboutme.html"><button class="button l" id="button1">ABOUT ME!</button></a>
+          </div>
+        </div>
+        <div class="right">
+          <button class="button r a" id="button2">Projects</button>
+          <button class="button r b" id="button3">Experience</button>
+          <button class="button r c" id="button4">About This Site</button>
+          <button class="button r d" id="button5">Resume</button>
+          <script src="/js/frontpage.js"></script>
+        </div>
+      </main>
+    </div>
+  </div>
 </body>
+
 </html>
+
+
+<script>
+  // Resume popup logic
+  const resumeButton = document.getElementById("button5");
+  const popup = document.getElementById("resumePopup");
+  const yesBtn = document.getElementById("resumeYes");
+  const noBtn = document.getElementById("resumeNo");
+
+  resumeButton.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+  });
+
+  noBtn.addEventListener("click", () => {
+    window.location.href = "/index.html"; // Redirect to main
+  });
+
+yesBtn.addEventListener("click", () => {
+  window.open("/downloads/andrew_resume.pdf", "_blank");
+  popup.classList.add("hidden"); // close popup after opening
+});
+
+</script>
