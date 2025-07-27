@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="/css/standard.css">
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .aboutme {
+      text-align: center;
+      padding: 2rem;
+    }
+    .aboutme img {
+      width: 300px;
+      height: auto;
+      border: 3px solid #2e5ad4;
+      box-shadow: 10px 10px 0 #2e5ad4;
+    }
+    .aboutme p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="aboutme">
+    <h1>About Me</h1>
+    <img id="randomImage" src="" alt="Random pic of Drew">
+    <p>Hi, I'm Andrew Avendano, a student in aerospace engineering who loves making things. I do robotics, Baja SAE, and build CNCs and electric bikes for fun.</p>
+  </div>
+
+  <script>
+    const images = [
+      "/Images/me1.png",
+      "/Images/me2.png",
+      "/Images/me3.png",
+      "/Images/me4.png"
+    ];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    document.getElementById("randomImage").src = images[randomIndex];
+  </script>
 </body>
 </html>
